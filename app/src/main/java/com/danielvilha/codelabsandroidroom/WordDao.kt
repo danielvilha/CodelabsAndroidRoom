@@ -10,12 +10,13 @@ import androidx.room.Query
  */
 @Dao
 interface WordDao {
-    @Query("select * from word_table order by word asc")
+
+    @Query("SELECT * from word_table ORDER BY word ASC")
     fun getAllWords(): LiveData<List<Word>>
 
     @Insert
     suspend fun insert(word: Word)
 
-    @Query("delete from word_table")
+    @Query("DELETE FROM word_table")
     fun deleteAll()
 }
